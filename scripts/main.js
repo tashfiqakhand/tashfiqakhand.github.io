@@ -35,15 +35,7 @@ for (i = 0; i < acc.length; i++) {
     } 
   });
 }
-var bcc = document.getElementsByClassName("panel");
-function toggle() {
-	for (i = 0; i < acc.length; i++) {
-		if(acc[i].className === "accordion active") {
-			acc[i].className = "accordion";
-			bcc[i].style.display = "none";
-		}
-	}
-}
+
 
 function ProductOrganization() {
 	var w = document.getElementById("None").checked;
