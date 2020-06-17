@@ -1,134 +1,177 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<link href="styles/style.css" rel="stylesheet" type="text/css">	
-</head>
+<html lang="en">
+<!-- Tashfiq Akhand 8219894 -->
 
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.accordion {
-  background-color: #eee;
-  color: #444;
-  cursor: pointer;
-  padding: 5px;
-  width: 100%;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  transition: 0.4s;
-  border: 1px solid black;
-}
+<!-- BOOTSTRAP -->
+  <head>
+  	<title>SEG3125 Module 4 - Labs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-.active, .accordion:hover {
-  background-color: #ccc;
-}
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-.accordion:after {
-  content: '\002B';
-  color: #777;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-}
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-.active:after {
-  content: "\2212";
-}
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-.panel {
-  padding: 0 18px;
-  background-color: white;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-}
-</style>
-</head>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+	<link href="styles/style.css" rel="stylesheet" type="text/css">
+  </head>
+<!-- /BOOTSTRAP -->
 
 
+ <body style="background-color:#3EBDB8;">
 
-<body>
-<div class = "title">
-	<h1>Tashfiq's Grocery Market</h1>
-</div>
-<!-- Tab links, each one with an onclick event associated with it -->
-<div class="tab">
-  <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
-  <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-  <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
-</div>
+ 	<div class="container-md p-3 my-3 border bg-dark text-white">
+ 		<img src="images/logo.jpg" class="float-right rounded-circle" alt="Logo" width="100" height="100">
+        <h1>Welcome to <code>Tash's Cuts</code></h1>
+        <p>We'll take care of your hair!</p>
+    </div>
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
-	Please choose a dietary preference:<br>
-	
-    <input id = "Vegetarian" type="checkbox" name="Vegetarian" value="Vegetarian">Vegetarian Products<br>
-	<input id = "GlutenFree" type="checkbox" name="GlutenFree" value="GlutenFree">Gluten Free Products<br>
-	<input id = "Organic" type="checkbox" name="Organic" value="Organic">Organic Products<br>
-	<input id = "None" type="checkbox" name="None" value="None">No Dietary Preferences<br>
+    <div class="container-md p-3 my-3 border bg-light text-body">
+        <h3>Let us tell you about our story</h3>
+        <p>We are a 5 star barber shop that was founded by Tashfiq Akhand in 
+        	1945. We started in a small shop helping locals get the haircut of their dreams and then flourished from there. We now own an established shop in <mark>742 Bondray Drive, K1W 9J1, Ottawa, Ontario</mark> and are <mark>open everyday from 10am to 6pm</mark>. If you want to make a reservation through the phone, please call <mark>613-252-9043</mark>. Reserve your seat and come on in to have the cut of your life!</p>
+    </div>
 
-
-
-	<!-- <button onclick="populateListProductChoices(this.id, 'displayVegetable', 'displayFruit', 'displayMeat', 'displayWFD')">Update Preferences</button> -->
-
-	<button onclick="ProductOrganization()">Update Preferences</button>
- 
-</div>
-
-
-
-<div id="Products" class="tabcontent">
-  <h3>Your targeted products</h3>
-  <p>We preselected products based on your preferences.</p>
-	 Please choose items to buy:<br>
-	 <button class="accordion">Vegetables</button>
-	 <div id="Vegetable" class="panel">
-  		<div id="displayVegetable"></div>
-	 </div>
-
-	 <button class="accordion">Fruits</button>
-	 <div id="Fruit" class="panel">
-  		<div id="displayFruit"></div>
-	 </div>
-
-	 <button class="accordion">Meats</button>
-	 <div id="Meat" class="panel">
-  		<div id="displayMeat"></div>
-	 </div>
-
-	 <button class="accordion">Wheat-Flour Doughs</button>
-	 <div id="WFD" class="panel">
-  		<div id="displayWFD"></div>
-	 </div>
-
-	 <button id="addCart" type="button" class="block" onclick="selectedItems()">
-		Add selected items to cart.
-	</button>
-</div>
-
-<div id="Cart" class="tabcontent">
-  <h3>Your Cart</h3>
-  <p>Here is your cart contained of all your selected products.</p>
-  <div id="displayCart"></div>
-</div>
-
-<script src="scripts/groceries.js"></script>
-<script src="scripts/main.js"></script>
+    <div class="container">
+  		<h2>Services Offered</h2>           
+  		<table class="table table-hover table-bordered">
+    		<thead>
+      			<tr>
+        			<th>Services</th>
+        			<th>Description</th>
+        			<th>Price</th>
+      			</tr>
+    		</thead>
+    		<tbody>
+      			<tr>
+        			<td>Haircut</td>
+        			<td>The most popular choice, a haircut that gives the styled hair of your dreams, any fade of your choice, and outline if wanted! <br>Duration: 45 mins</td>
+        			<td>$20</td>
+      			</tr>
+      			<tr>
+       				<td>Haircut + Beard</td>
+        			<td>Full package haircut that gives the styled hair of your dreams, any fade of your choice, outline if wanted, and a great beard fix up! <br>Duration: 1 hour</td>
+        			<td>$25</td>
+      			</tr>
+      			<tr>
+        			<td>Fade</td>
+        			<td>Any fade of your choice.<br>Duration: 20 minutes</td>
+        			<td>$12</td>
+      			</tr>
+    		</tbody>
+  		</table>
+	</div>
 
 
-<div class = "signature">
-<footer>
-			<pre>
- 			Website designed by: Tashfiq Akhand
-			Student Number: 8219894
-			Email: <a href="mailto:takha099@uottawa.ca">takha099@uottawa.ca</a>
-			</pre>
-</footer>
-</div>
+	<div class="container p-3">
+        <h2>Meet our Barbers</h2>
+        <div class="card-columns">
+            <div class="card bg-primary" style="width:200px">
+                <img class="card-img-top" src="images/Felix.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Felix</h4>
+                    <p class="card-text">The Fade Specialist!</p>
+                    <a href="#profile1" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile1" class="collapse p-3">
+                        <p>Felix has been cutting hair for 8 years and is famous for his fades! He has been working in the shop for 4 years now and is a valuable member of our team!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-primary" style="width:200px">
+                <img class="card-img-top" src="images/Pablo.jpg" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Pablo</h4>
+                    <p class="card-text">The Curly Hair Specialist and <i><b>Owner</b></i></p>
+                    <a href="#profile2" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile2" class="collapse p-3">
+                        <p>Pablo has been cutting hair for 20 years and has been the owner of <code>Tash's Cuts</code> for 12 years now. He is an exceptional barber with experience!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-primary" style="width:200px">
+                <img class="card-img-top" src="images/Calvin.png" alt="Card image" style="width:100%">
+                <div class="card-body">
+                    <h4 class="card-title">Calvin</h4>
+                    <p class="card-text">The Stylist</p>
+                    <a href="#profile3" class="btn btn-primary" data-toggle="collapse">See Profile</a>
+                    <div id="profile3" class="collapse p-3">
+                        <p>Calvin has been cutting hair for 11 years and has been part of our team for 8 years now. He specializes in amazing styles and has gave a few celebrities an epic haircut such as Zayne Malik and Justin Bieber.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Seats Fill up Fast! Reserve Now!</strong>
+        </div>
+    </div>
+
+
+
+    <div class="container">
+        <div class="container-md p-3 my-3 border bg-success text-white">
+            <h2>Book your Appointment!</h1>
+        </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Here is our list of services:</p>
+						<input type="radio" name="Haircut" value="Haircut"> Haircut ($20)<br>
+						<input type="radio" name="Haircut&Beard" value="Haircut&Beard"> Haircut + Beard ($25)<br>
+						<input type="radio" name="Fade" value="Fade"> Fade ($12)<br>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Please select a date and time in which you are available.</p>
+                        <div class="form-group row">
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2020-06-16T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Please enter your information so we can contact you.</p>
+                        <form action="https://tashfiqakhand.github.io/" name="my form" method="POST">
+						First name: <input type="test" name="firstname"><br>
+						Last name: <input type="test" name="lastname"><br>
+						Email: <input type="test" name="email"><br>
+						Phone Number: <input type="test" name="phoneNumber"><br>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+  				<button type="submit" class="btn-lg btn-success">Reserve</button>
+			</div>
+        </div>
+        
+    </div>
 
 
 </body>
